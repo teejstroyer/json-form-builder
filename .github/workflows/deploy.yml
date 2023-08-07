@@ -15,7 +15,7 @@ jobs:
       - name: Install angular cli
         run: npm install -g @angular/cli
       - name: Build Angular app
-        run: ng build --prod
+        run: ng build --base-href /json-form-builder/
 
   deploy:
     runs-on: ubuntu-latest
