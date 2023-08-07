@@ -1,0 +1,19 @@
+<div class="block">
+  <div class="row">
+    <button mat-button (click)="ToggleType()">{{block.layoutType}}</button>
+    <button mat-button *ngIf="this.deleteItem.observers.length > 0" (click)="deleteMe()">🗑</button>
+    <button mat-button (click)="AddColumn()">⬇</button>
+    <button mat-button (click)="AddRow()">➡</button>
+    <button mat-button (click)="AddField()">🔡</button>
+    <button mat-button (click)="AddDecorator()">🔆</button>
+  </div>
+
+  <div [ngClass]="{'row': IsRowBlock()}">
+    <ng-container *ngFor="let b of block.children; let i = index" >
+      <app-field *ngIf="IsFieldBlock(b)" [block]="b" (deleteItem)="RemoveChild($event)" [idx]="i" />
+      <app-layout *ngIf="IsLayoutBlock(b)" [block]="b" (deleteItem)="RemoveChild($event)" [idx]="i" />
+      <app-decorator *ngIf="IsDecoratorBlock(b)" [block]="b" (deleteItem)="RemoveChild($event)" [idx]="i" />
+    </ng-container>
+  </div>
+
+</div>

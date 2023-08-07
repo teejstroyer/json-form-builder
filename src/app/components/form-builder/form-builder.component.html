@@ -1,0 +1,5 @@
+<div class="build-container">
+    <app-field *ngIf="IsFieldBlock(root)" [block]="root"></app-field>
+    <app-layout *ngIf="IsLayoutBlock(root)" [block]="root" ></app-layout>
+    <app-decorator *ngIf="IsDecoratorBlock(root)" [block]="root"></app-decorator>
+</div>
