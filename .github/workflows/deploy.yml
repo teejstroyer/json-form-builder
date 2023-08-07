@@ -15,7 +15,7 @@ jobs:
       - name: Install angular cli
         run: npm install -g @angular/cli
       - name: Build Angular app
-        run: ng build  --output-path docs --base-href /json-form-builder/
+        run: ng build  --output-path dist --base-href /json-form-builder/
 
   deploy:
     runs-on: ubuntu-latest
@@ -25,9 +25,9 @@ jobs:
         uses: actions/configure-pages@v3
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
+        uses: actions/upload-pages-artifact@v3
         with:
-          path: '/dist/'
+          path: dist
 
       - id: deployment
         name: Deploy to GitHub Pages
