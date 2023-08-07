@@ -12,6 +12,8 @@ jobs:
       - uses: actions/checkout@v2
       - name: Install dependencies
         run: npm install
+      - name: Install angular cli
+        run: npm install -g @angular/cli
       - name: Build Angular app
         run: ng build --prod
 
