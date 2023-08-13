@@ -3,6 +3,7 @@ import { DecoratorType } from "../enums/decorator-type";
 import { FieldType } from "../enums/field-type";
 import { LayoutType } from "../enums/layout-type";
 import { Block } from "./block";
+import * as uuid from 'uuid';
 
 export class DecoratorBlock implements Block {
   label: string = "";
@@ -10,10 +11,12 @@ export class DecoratorBlock implements Block {
   decoratorType?: DecoratorType | undefined;
   fieldType?: FieldType | undefined;
   layoutType?: LayoutType | undefined;
-  children?: Block[] | [];
+  children?: Block[];
+  uId: string;
 
   constructor(label: string, decoratorType: DecoratorType) {
     this.label = label;
     this.decoratorType = decoratorType;
+    this.uId = uuid.v4();
   }
 }

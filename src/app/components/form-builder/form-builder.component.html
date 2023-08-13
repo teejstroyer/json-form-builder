@@ -1,5 +1,6 @@
+<div class="row-end">
+  <button mat-raised-button color="primary" (click)="showJSON()">Show JSON</button>
+</div>
 <div class="build-container">
-    <app-field *ngIf="IsFieldBlock(root)" [block]="root"></app-field>
-    <app-layout *ngIf="IsLayoutBlock(root)" [block]="root" ></app-layout>
-    <app-decorator *ngIf="IsDecoratorBlock(root)" [block]="root"></app-decorator>
+  <app-form-block [block]="block" [connectedDropListsIds]="connectedDropListsIds" />
 </div>

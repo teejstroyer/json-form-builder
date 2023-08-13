@@ -10,4 +10,5 @@ export interface Block {
   fieldType?: FieldType,
   layoutType?: LayoutType,
   children?: Block[]
+  uId: string
 }

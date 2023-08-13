@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DecoratorComponent } from './decorator.component';
+import { FormBlockComponent } from './form-block.component';
 
-describe('DecoratorComponent', () => {
-  let component: DecoratorComponent;
-  let fixture: ComponentFixture<DecoratorComponent>;
+describe('FormBlockComponent', () => {
+  let component: FormBlockComponent;
+  let fixture: ComponentFixture<FormBlockComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [DecoratorComponent]
+      declarations: [FormBlockComponent]
     });
-    fixture = TestBed.createComponent(DecoratorComponent);
+    fixture = TestBed.createComponent(FormBlockComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

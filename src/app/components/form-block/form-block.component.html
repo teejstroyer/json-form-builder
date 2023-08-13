@@ -1,0 +1,36 @@
+<div class="block">
+  <div class="row-end">
+    <p> {{block.type}}</p>
+  </div>
+  <div class="row">
+    <button mat-button *ngIf="this.deleteItem.observers.length > 0" (click)="deleteSelf()">
+      <mat-icon>delete</mat-icon>
+    </button>
+    <button mat-button *ngIf="block.type === BlockType.Layout" (click)="toggleType()">
+      <mat-icon *ngIf="block.layoutType === LayoutType.Row">view_column</mat-icon>
+      <mat-icon *ngIf="block.layoutType === LayoutType.Column">view_agenda</mat-icon>
+    </button>
+    <button mat-button *ngIf="block.type === BlockType.Layout" (click)="addColumn()">
+      <mat-icon>border_outer</mat-icon>
+    </button>
+    <button mat-button *ngIf="block.type === BlockType.Layout" (click)="addField()">
+      <mat-icon>text_fields</mat-icon>
+    </button>
+    <button mat-button *ngIf="block.type === BlockType.Layout" (click)="addDecorator()">
+      <mat-icon>label</mat-icon>
+    </button>
+  </div>
+
+  dropIDs:{{allDropListsIds.length}}
+
+  <div *ngIf="block.type === BlockType.Layout" [id]="block.uId" cdkDropList cdkDropListGroup
+    [cdkDropListData]="block.children" (cdkDropListDropped)="drop($event)" [cdkDropListConnectedTo]="allDropListsIds">
+    <div [ngClass]="{'row': this.block.layoutType === LayoutType.Row}">
+      <div *ngFor="let b of block.children; let i = index" cdkDrag>
+        <app-form-block [block]="b" (deleteItem)="removeChild($event)" [connectedDropListsIds]="allDropListsIds" />
+      </div>
+    </div>
+  </div>
+
+  <sub>{{block.uId}}</sub>
+</div>
