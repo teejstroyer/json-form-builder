@@ -8,6 +8,8 @@ Create an extendable drag and drop JSON form builder to be used in conjunction w
 ## TODO Items
 
 - [x] Generate basic button based form builder
+- [x] Basic drag and drop
+- [ ] Replace non tail-wind css
 - [ ] Decide whether to use an existing standard for the form renderer like [JSON Forms](https://jsonforms.io)
 - [ ] Form From scratch component tool box with drag and drop
 - [ ] JSON-schema based tool box. (Tool box will contain only items in schema)
